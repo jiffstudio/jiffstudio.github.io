@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>搭建博客中遇到的问题和解决方法 | 分秒&#39;s blog</title>
+  <title>汇编的学习心得（二） | 分秒&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="博客标题乱码问题 https:&#x2F;&#x2F;blog.csdn.net&#x2F;mqdxiaoxiao&#x2F;article&#x2F;details&#x2F;93256931  在HEXO主题中添加数学公式支持 https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhyantao&#x2F;p&#x2F;10424874.html  yilia主题头像&#x2F;图标设置 https:&#x2F;&#x2F;blog.csdn.net&#x2F;dta0502&#x2F;article&#x2F;details&#x2F;844">
+  <meta name="description" content="汇编的学习心得（二）一、字单元字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元（8位）组成。高地址内存单元中存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。 字单元的起始地址为2，我们可以说这是2地址字单元。 二、DS如何将数据送入段寄存器？8086CPU不支持将数据直接送入段寄存器的操作，ds是一个段寄存器，所以mov ds,1000H这条指令是非法的。那">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建博客中遇到的问题和解决方法">
-<meta property="og:url" content="http://yoursite.com/2020/05/14/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="汇编的学习心得（二）">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="分秒&#39;s blog">
-<meta property="og:description" content="博客标题乱码问题 https:&#x2F;&#x2F;blog.csdn.net&#x2F;mqdxiaoxiao&#x2F;article&#x2F;details&#x2F;93256931  在HEXO主题中添加数学公式支持 https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhyantao&#x2F;p&#x2F;10424874.html  yilia主题头像&#x2F;图标设置 https:&#x2F;&#x2F;blog.csdn.net&#x2F;dta0502&#x2F;article&#x2F;details&#x2F;844">
+<meta property="og:description" content="汇编的学习心得（二）一、字单元字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元（8位）组成。高地址内存单元中存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。 字单元的起始地址为2，我们可以说这是2地址字单元。 二、DS如何将数据送入段寄存器？8086CPU不支持将数据直接送入段寄存器的操作，ds是一个段寄存器，所以mov ds,1000H这条指令是非法的。那">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-14T09:55:12.592Z">
-<meta property="article:modified_time" content="2020-05-14T09:55:12.592Z">
+<meta property="article:published_time" content="2020-06-05T03:52:15.520Z">
+<meta property="article:modified_time" content="2020-06-05T15:02:35.939Z">
 <meta property="article:author" content="分秒">
 <meta name="twitter:card" content="summary">
   
@@ -154,35 +154,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-搭建博客中遇到的问题和解决方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-汇编的学习心得（二）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      搭建博客中遇到的问题和解决方法
+      汇编的学习心得（二）
     </h1>
   
 
         
-        <a href="/2020/05/14/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-14T09:55:12.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+        <a href="/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-06-05T03:52:15.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="博客标题乱码问题"><a href="#博客标题乱码问题" class="headerlink" title="博客标题乱码问题"></a>博客标题乱码问题</h3><blockquote>
-<p><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93256931" target="_blank" rel="noopener">https://blog.csdn.net/mqdxiaoxiao/article/details/93256931</a></p>
-</blockquote>
-<h3 id="在HEXO主题中添加数学公式支持"><a href="#在HEXO主题中添加数学公式支持" class="headerlink" title="在HEXO主题中添加数学公式支持"></a>在HEXO主题中添加数学公式支持</h3><blockquote>
-<p><a href="https://www.cnblogs.com/zhyantao/p/10424874.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhyantao/p/10424874.html</a></p>
-</blockquote>
-<h3 id="yilia主题头像-图标设置"><a href="#yilia主题头像-图标设置" class="headerlink" title="yilia主题头像/图标设置"></a>yilia主题头像/图标设置</h3><blockquote>
-<p><a href="https://blog.csdn.net/dta0502/article/details/84403929" target="_blank" rel="noopener">https://blog.csdn.net/dta0502/article/details/84403929</a></p>
-</blockquote>
+        <h2 id="汇编的学习心得（二）"><a href="#汇编的学习心得（二）" class="headerlink" title="汇编的学习心得（二）"></a>汇编的学习心得（二）</h2><h5 id="一、字单元"><a href="#一、字单元" class="headerlink" title="一、字单元"></a>一、字单元</h5><p>字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元（8位）组成。高地址内存单元中存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。</p>
+<p>字单元的<strong>起始地址</strong>为2，我们可以说这是2地址字单元。</p>
+<h5 id="二、DS"><a href="#二、DS" class="headerlink" title="二、DS"></a>二、DS</h5><p><strong>如何将数据送入段寄存器？</strong>8086CPU不支持将数据直接送入段寄存器的操作，ds是一个段寄存器，所以mov ds,1000H这条指令是非法的。那么如何将1000H送入ds呢？只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds.</p>
+<h5 id="三、字的传送"><a href="#三、字的传送" class="headerlink" title="三、字的传送"></a>三、字的传送</h5><p>设cx=1000，使用mov [0],cx，会发现[0]所在的位置变成了00，[1]所在的位置变成了10，也就是说，低位在前面，高位在后面。</p>
+<p>如果是mov cx,[0]，同样会传[0]和[1]两位，也就是说只要有一个参数是16位的，就会让另一个参数按16位来，如果不是就扩展下一个</p>
+<h5 id="四、指令"><a href="#四、指令" class="headerlink" title="四、指令"></a>四、指令</h5><p>使用t指令后，不仅会显示出当前所有寄存器的值，还会显示下一条汇编指令和指令中涉及到的内存地址的值，可以说是相当人性化了，可以清晰的看到下一步会发生什么。</p>
+<p>“mov段寄存器，内存单元”也是可行的。</p>
+<p>段寄存器不支持add,sub等操作。</p>
+<p>好像主要只有非段数据寄存器能接受直接的数字，其他的都要靠这四个寄存器中转，而且还不能运算</p>
+<p>sp不是段数据，但它是寄存器，是可以直接设置数值的，还可以运算，而ss是段数据就不行</p>
+<p>内存要么靠寄存器给数据，要么靠栈</p>
+<h5 id="五、数据段"><a href="#五、数据段" class="headerlink" title="五、数据段"></a>五、数据段</h5><p>段的定义只要求<strong>起始地址</strong>为16的倍数，终止地址未作要求，只要长度不超过FFFF即可</p>
+<h5 id="六、栈"><a href="#六、栈" class="headerlink" title="六、栈"></a>六、栈</h5><p>栈顶指的就是最上面的元素位置，是实际存在的，如果栈空就指向栈下面的位置。</p>
+<p>所以修改栈指针的时候，一定要注意改到的位置不是下一步会插入的位置，而是待插入位置下方的位置。</p>
 
       
 
@@ -262,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/14/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/29/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          汇编的学习心得（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/14/My-First-Blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My First Blog</div>
+    <a href="/2020/05/29/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">汇编的学习心得（一）</div>
       <i class="icon-circle-right"></i>
     </a>
   

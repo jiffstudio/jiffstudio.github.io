@@ -152,6 +152,167 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-汇编的学习心得（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/">汇编的学习心得（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-06-05T03:52:15.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="汇编的学习心得（二）"><a href="#汇编的学习心得（二）" class="headerlink" title="汇编的学习心得（二）"></a>汇编的学习心得（二）</h2><h5 id="一、字单元"><a href="#一、字单元" class="headerlink" title="一、字单元"></a>一、字单元</h5><p>字单元，即存放一个字型数据（16位）的内存单元，由两个地址连续的内存单元（8位）组成。高地址内存单元中存放字型数据的高位字节，低地址内存单元中存放字型数据的低位字节。</p>
+<p>字单元的<strong>起始地址</strong>为2，我们可以说这是2地址字单元。</p>
+<h5 id="二、DS"><a href="#二、DS" class="headerlink" title="二、DS"></a>二、DS</h5><p><strong>如何将数据送入段寄存器？</strong>8086CPU不支持将数据直接送入段寄存器的操作，ds是一个段寄存器，所以mov ds,1000H这条指令是非法的。那么如何将1000H送入ds呢？只好用一个寄存器来进行中转，即先将1000H送入一个一般的寄存器，如bx，再将bx中的内容送入ds.</p>
+<h5 id="三、字的传送"><a href="#三、字的传送" class="headerlink" title="三、字的传送"></a>三、字的传送</h5><p>设cx=1000，使用mov [0],cx，会发现[0]所在的位置变成了00，[1]所在的位置变成了10，也就是说，低位在前面，高位在后面。</p>
+<p>如果是mov cx,[0]，同样会传[0]和[1]两位，也就是说只要有一个参数是16位的，就会让另一个参数按16位来，如果不是就扩展下一个</p>
+<h5 id="四、指令"><a href="#四、指令" class="headerlink" title="四、指令"></a>四、指令</h5><p>使用t指令后，不仅会显示出当前所有寄存器的值，还会显示下一条汇编指令和指令中涉及到的内存地址的值，可以说是相当人性化了，可以清晰的看到下一步会发生什么。</p>
+<p>“mov段寄存器，内存单元”也是可行的。</p>
+<p>段寄存器不支持add,sub等操作。</p>
+<p>好像主要只有非段数据寄存器能接受直接的数字，其他的都要靠这四个寄存器中转，而且还不能运算</p>
+<p>sp不是段数据，但它是寄存器，是可以直接设置数值的，还可以运算，而ss是段数据就不行</p>
+<p>内存要么靠寄存器给数据，要么靠栈</p>
+<h5 id="五、数据段"><a href="#五、数据段" class="headerlink" title="五、数据段"></a>五、数据段</h5><p>段的定义只要求<strong>起始地址</strong>为16的倍数，终止地址未作要求，只要长度不超过FFFF即可</p>
+<h5 id="六、栈"><a href="#六、栈" class="headerlink" title="六、栈"></a>六、栈</h5><p>栈顶指的就是最上面的元素位置，是实际存在的，如果栈空就指向栈下面的位置。</p>
+<p>所以修改栈指针的时候，一定要注意改到的位置不是下一步会插入的位置，而是待插入位置下方的位置。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/05/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-汇编的学习心得（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89/">汇编的学习心得（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/29/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-05-29T07:03:30.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="汇编的学习心得（一）"><a href="#汇编的学习心得（一）" class="headerlink" title="汇编的学习心得（一）"></a>汇编的学习心得（一）</h2><h5 id="一、数位"><a href="#一、数位" class="headerlink" title="一、数位"></a>一、数位</h5><ol>
+<li>一个十六进制的数位相当于4个bit（位），所以两个数位才能相当于一个字节</li>
+<li>16位相当于两个字节，所以是4个数位</li>
+<li><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20200605113205862.png" alt="image-20200605113205862"></li>
+<li>8086CPU的上一代CPU中的寄存器都是8位的，为了保证兼容，使原来基于上代CPU编写的程序稍加修改就可以运行在8086之上，8086CPU的AⅩ、BX、CX、DX这4个寄存器都可分为两个可独立使用的8位寄存器来用：<ul>
+<li>AX可分为AH和AL；</li>
+<li>BX可分为BH和BL；</li>
+<li>CX可分为CH和CL；</li>
+<li>DX可分为DH和DL</li>
+</ul>
+</li>
+</ol>
+<h5 id="二、DOSBox指令"><a href="#二、DOSBox指令" class="headerlink" title="二、DOSBox指令"></a>二、DOSBox指令</h5><ol>
+<li><p><code>e 1000:0 “a&quot; “b”</code>与<code>e 1000:0 &#39;a&#39; &#39;b&#39;</code>效果完全相同，这说明在DOSBox里，单双引号是不区分的，字符串末尾不会给加\0</p>
+</li>
+<li><p><code>-d 1000:0 f</code>可以只打印这一行16个的数据</p>
+</li>
+<li><p>指令总结</p>
+<p>| 指令名 | 作用                                                         |<br>| ——— | —————————————————————————————— |<br>| R      | 查看和修改寄存器内容<br />比如：r cs就是修改cs的内容，接着就会给你冒号让你修改 |<br>| D      | 查看数据                                                     |<br>| E      | 编辑数据                                                     |<br>| U      | 解析数据对应的指令                                           |<br>| T      | 执行CS:IP处的数据                                            |<br>| A      | 以汇编的方式快速写入指令                                     |</p>
+</li>
+<li><p>修改rom对应区域的值是不可行的</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/29/%E6%B1%87%E7%BC%96%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-搭建博客中遇到的问题和解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
